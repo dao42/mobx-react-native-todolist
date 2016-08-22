@@ -47,7 +47,7 @@ export default class WeclomeScreen extends Component {
         )
       })
     } else {
-      todoListView = <View style={styles.noTodoList}><Text style={styles.noTodoListText}>No todoList Now!</Text></View>;
+      todoListView = <View style={styles.noTodoList}><Text style={styles.noTodoListText}>No todoList, please add one first! </Text></View>;
     }
 
     return (
