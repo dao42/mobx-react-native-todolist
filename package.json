@@ -12,6 +12,7 @@
     "react": "15.2.1",
     "react-native": "^0.31.0",
     "react-native-button": "^1.6.0",
+    "react-native-checkbox": "^1.0.15",
     "react-native-navbar": "^1.5.0",
     "react-native-tab-navigator": "^0.3.2",
     "react-native-vector-icons": "^2.0.3"
