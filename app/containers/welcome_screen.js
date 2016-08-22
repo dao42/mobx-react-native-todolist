@@ -59,7 +59,7 @@ export default class WeclomeScreen extends Component {
         <Text style={styles.footer}>
           Total: {this.props.todoListStore.total}, Done: {this.props.todoListStore.doneTotal}
         </Text>
-        <TextInput ref='1' autoCorrect={false} style={styles.textInput} onSubmitEditing={(event)=>this.submitTodo(event)}/>
+        <TextInput ref='1' autoCapitalize={'none'} autoCorrect={false} style={styles.textInput} onSubmitEditing={(event)=>this.submitTodo(event)}/>
       </View>
     )
   }
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 27,
     textDecorationLine: 'line-through',
+    color: '#aaa',
   },
 
   footer: {
