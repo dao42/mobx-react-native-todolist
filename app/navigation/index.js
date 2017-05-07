@@ -1,4 +1,9 @@
-import Router from './Router'
-import Routes from './Routes'
+import { TabNavigator, StackNavigator } from 'react-navigation'
 
-export { Router, Routes }
+import WelcomeScreen from '../containers/welcome_screen'
+
+const Navigation = StackNavigator({
+  WelcomeScreen: { screen: WelcomeScreen },
+});
+
+export default Navigation

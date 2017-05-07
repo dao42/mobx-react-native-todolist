@@ -1,20 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 import { Text, View, StyleSheet, TextInput } from 'react-native'
-import Routes from '../navigation/routes'
 import { observer } from 'mobx-react/native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import ApplicationStyles from '../styles'
 
+import todoListStore from '../stores/todo_list_store'
+
 @observer
 export default class WeclomeScreen extends Component {
-  static propTypes = {
-    navigator: PropTypes.object.isRequired,
-    todoListStore: PropTypes.object.isRequired
-  }
 
   submitTodo(event) {
     let title = event.nativeEvent.text;
-    this.props.todoListStore.todos.push({title: title, done: false});
+    todoListStore.todos.push({title: title, done: false});
     this.refs['1'].clear();
     this.refs['1'].focus();
   }
@@ -25,8 +22,8 @@ export default class WeclomeScreen extends Component {
 
   render() {
     let todoListView;
-    if( this.props.todoListStore.todos.length > 0 ){
-      todoListView = this.props.todoListStore.todos.map( (todo, index)=> {
+    if( todoListStore.todos.length > 0 ){
+      todoListView = todoListStore.todos.map( (todo, index)=> {
         let text;
         if( todo.done ){
           text =
@@ -57,7 +54,7 @@ export default class WeclomeScreen extends Component {
           {todoListView}
         </View>
         <Text style={styles.footer}>
-          Total: {this.props.todoListStore.total}, Done: {this.props.todoListStore.doneTotal}
+          Total: {todoListStore.total}, Done: {todoListStore.doneTotal}
         </Text>
         <TextInput ref='1' autoCapitalize={'none'} autoCorrect={false} style={styles.textInput} onSubmitEditing={(event)=>this.submitTodo(event)}/>
       </View>
@@ -100,12 +97,12 @@ const styles = StyleSheet.create({
 
   todoText: {
     textAlign: 'center',
-    lineHeight: 27,
+    lineHeight: 40,
   },
 
   todoTextDone: {
     textAlign: 'center',
-    lineHeight: 27,
+    lineHeight: 40,
     textDecorationLine: 'line-through',
     color: '#aaa',
   },
