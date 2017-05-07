@@ -1,6 +1,7 @@
 package com.mobx_react_native_todolist;
 
 import com.facebook.react.ReactActivity;
+import com.oblador.vectoricons.VectorIconsPackage;
 
 public class MainActivity extends ReactActivity {
 
