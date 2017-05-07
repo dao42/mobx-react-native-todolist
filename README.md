@@ -2,7 +2,7 @@
 
 A todolist native app built with mobx-react-native-template.
 
-[screenshot](https://github.com/80percent/mobx_react_native_todolist/raw/master/img/screenshot.gif)
+![screenshot](https://github.com/80percent/mobx-react-native-todolist/raw/master/img/screenshot.gif)
 
 ## Built with
 
